@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package br.com.fatepg.quiz;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 /**
  *
@@ -18,10 +12,10 @@ public class Usuario {
     
     private String nome;
     private double media;
-    List<Double> last10 = new ArrayList<Double>();
+    private List<Double> last10 = new ArrayList<>();
     
     
-    
+
     public String getNome() {
         return nome;
     }
@@ -30,21 +24,33 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public double getMedia() {
+    public double getMedia(List<Double> last10) {
+        media =0;
+        for (int i=0;i<last10.size();i++) {           
+            media += last10.get(i);
+        }
+        media /= last10.size();
+        
+        
         return media;
     }
 
-    public double setMedia(Object last10) {
-        double total;
-        
-        
-        
-       return media;
-       
+    public void setMedia(double media) {
+        this.media = media;
     }
 
-    
-    
-    
+    public List<Double> getLast10() {
+        return last10;
+    }
+
+    public void setLast10(List<Double> last10) {
+        this.last10 = last10;
+    }
     
 }
+    
+    
+    
+    
+    
+   
