@@ -31,7 +31,6 @@ public class Usuario {
         }
         media /= last10.size();
         
-        
         return media;
     }
 
