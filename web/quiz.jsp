@@ -22,11 +22,9 @@
               int[] conf = new int [10];
               int random = 1 + (int) (Math.random() * 100);
                 do{
-                     random = 1 + (int) (Math.random() * 100);
-                   
-                    if(random >=0 && random <=20){
-                
-                    
+                        random = 1 + (int) (Math.random() * 100); 
+                        if(random >=0 && random <20){
+
                 Questoes q = Quiz.getTeste().get(random);
                 i++; 
                  %>
