@@ -10,21 +10,23 @@ package br.com.fatepg.quiz;
  * @author a
  */
 public class Questoes {
-    private String questao;
-    private String resposta;
-    private String[] alternativas;
+    private String      questao;
+    private String      resposta;
+    private String[]    alternativas;
+    private String      indicadorUso;
 
-    public Questoes(String questao, String resposta, String[] alternativas) {
+    public Questoes(String questao, String resposta, String[] alternativas, String indicadorUso) {
         this.questao = questao;
         this.resposta = resposta;
         this.alternativas = alternativas;
+        this.indicadorUso = indicadorUso;
     }
 
-    public String getQuestoes() {
+    public String getQuestao() {
         return questao;
     }
 
-    public void setQuestoes(String questao) {
+    public void setQuestao(String questao) {
         this.questao = questao;
     }
 
@@ -42,6 +44,20 @@ public class Questoes {
 
     public void setAlternativas(String[] alternativas) {
         this.alternativas = alternativas;
+    }
+
+    /**
+     * @return the indicadorUso
+     */
+    public String getIndicadorUso() {
+        return indicadorUso;
+    }
+
+    /**
+     * @param indicadorUso the indicadorUso to set
+     */
+    public void setIndicadorUso(String indicadorUso) {
+        this.indicadorUso = indicadorUso;
     }
     
     
