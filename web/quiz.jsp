@@ -1,9 +1,8 @@
 <%-- 
-    Document   : quiz
-    Created on : 07/05/2018, 21:38:59
-    Author     : CarlosFSNeto
+   
 --%>
 
+<%@page import="br.com.fatepg.quiz.ControleDeSessao"%>
 <%@page import="br.com.fatepg.quiz.Questoes"%>
 <%@page import="br.com.fatepg.quiz.Quiz"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
