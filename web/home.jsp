@@ -4,9 +4,11 @@
     Author     : a
 --%>
 
+<%@page import="br.com.fatepg.quiz.ControleDeSessao"%>
 <%@page import="br.com.fatepg.quiz.Questoes"%>
 <%@page import="br.com.fatepg.quiz.Quiz"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <%
     boolean tested=false;
@@ -22,6 +24,7 @@
         }
         grade = 100.0 * ((double)(cont)/Quiz.getTeste().size());
     }
+    //session.getAttribute("uname");
 %>
 <html>
     <head>
@@ -33,6 +36,24 @@
         <% if (tested){ %>
         <h2>Você acertou <%=grade%>% das questões!</h2>
         <%}%>
-        <h2><a href="quiz.jsp">Realizar QUIZ</a></h2>
+        
+        <%  
+        if(session.getAttribute("userName") != null){  
+        String name=(String)session.getAttribute("userName"); 
+        %>
+        <h2>Bem vindo <%=name%><h2>
+         <%}%>
+        <form action="ControleDeSessao">  
+            <br/>  
+            <%  
+                if(session.getAttribute("userName") == null){ 
+            %>
+                Login:<input type="text" name="userName"/>
+                <input type="submit" name=login  value="Entrar"/>
+            <%}else{%>  
+                <input type="submit" name=logout value="Sair"/>
+                <input type="button" onclick="document.location.href='quiz.jsp'" value="Realizar Quiz"/>  
+            <%}%>
+        </form>  
     </body>
 </html>
