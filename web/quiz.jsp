@@ -16,8 +16,17 @@
     <body>
         <h1>Web Quiz</h1>
         <form action = "home.jsp">
-            <% for (int i=0;i<Quiz.getTeste().size(); i++){
-                Questoes q = Quiz.getTeste().get(i); %>
+<%int i = 0;
+              int x = 0;
+              int[] conf = new int [10];
+              int random = 1 + (int) (Math.random() * 100);
+                do{
+                        random = 1 + (int) (Math.random() * 100); 
+                        if(random >=0 && random <20){
+
+                Questoes q = Quiz.getTeste().get(random);
+                i++; 
+                 %>
                 
                 <h2><%=q.getQuestoes()%></h2>
                 <input type="radio" name="<%=q.getQuestoes()%>" value="<%=q.getAlternativas()[0]%>"/><%=q.getAlternativas()[0]%>
