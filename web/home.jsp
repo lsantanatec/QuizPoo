@@ -11,20 +11,7 @@
 
 <!DOCTYPE html>
 <%
-    boolean tested=false;
-    double grade=0;
-    if(request.getParameter("tested")!=null){
-        tested=true;
-        int cont = 0;
-        for (int i=0;i<Quiz.getTeste().size(); i++){
-            Questoes q = Quiz.getTeste().get(i);
-            String p = request.getParameter(q.getQuestao());
-            if (q.getResposta().equals(p))
-                cont++;
-        }
-        grade = 100.0 * ((double)(cont)/Quiz.getTeste().size());
-    }
-    //session.getAttribute("uname");
+   
 %>
 <html>
     <head>
@@ -33,16 +20,15 @@
     </head>
     <body>
         <h1>Web Quiz</h1>
-        <% if (tested){ %>
-        <h2>Você acertou <%=grade%>% das questões!</h2>
-        <%}%>
+        
+        
         
         <%  
         if(session.getAttribute("userName") != null){  
         String name=(String)session.getAttribute("userName"); 
         %>
         <h2>Bem vindo <%=name%></h2>
-         <%}%>
+         
         <form action="ControleDeSessao">  
             <br/>  
             <%  
@@ -54,6 +40,22 @@
                 <input type="submit" name=logout value="Sair"/>
                 <input type="button" onclick="document.location.href='quiz.jsp'" value="Realizar Quiz"/>  
             <%}%>
+            
+            <div>
+                <h2>Top 10</h2>
+                <table>
+                    <tr>
+                        <th>Nome</th><th>Nota</th><th>Data</th>
+            <%
+                for
+                
+              
+            %>
+                
+                
+                
+                
+            </div>
         </form>  
     </body>
 </html>
