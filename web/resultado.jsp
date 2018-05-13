@@ -30,5 +30,7 @@
         <% if (tested){ %>
         <h2>Você acertou <%=grade%>% das questões!</h2>
         <%}%>
+        <br><br>
+        <a href="home.jsp">Voltar</a>
     </body>
 </html>
