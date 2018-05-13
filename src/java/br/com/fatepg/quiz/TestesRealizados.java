@@ -1,7 +1,7 @@
 package br.com.fatepg.quiz;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,20 +10,28 @@ import java.util.List;
  */
 public class TestesRealizados {
     
-    private Date tRealizado;
     private String nomeUser;
     private Double nota;
+    private LocalDate dataTeste;
     
     private List<Double> last10Geral = new ArrayList<>();
     private List<Double> melhoresNotas = new ArrayList<>();
-
-    public Date gettRealizado() {
-        return tRealizado;
+    
+    public TestesRealizados(String nomeUser, Double nota, LocalDate dataTeste) {
+        this.nomeUser = nomeUser;
+        this.nota = nota;
+        this.dataTeste = dataTeste;
     }
 
-    public void settRealizado(Date tRealizado) {
-        this.tRealizado = tRealizado;
+    public LocalDate getDataTeste() {
+        return dataTeste;
     }
+
+    public void setDataTeste(LocalDate dataTeste) {
+        this.dataTeste = dataTeste;
+    }
+
+   
 
     public String getNomeUser() {
         return nomeUser;
