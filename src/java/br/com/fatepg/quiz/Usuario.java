@@ -15,6 +15,13 @@ public class Usuario{
     private double media;
     private List<Double> last10 = new ArrayList<>();  
     
+    
+    public Usuario(String nome, Double media, List<Double> last10) {
+        this.nome = nome;
+        this.media = media;
+        this.last10 = last10;
+    } 
+        
     public String getNome() {
         return nome;
     }
