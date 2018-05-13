@@ -3,15 +3,15 @@
     Created on : 07/05/2018, 21:38:40
     Author     : a
 --%>
-
 <%@page import="br.com.fatepg.quiz.ControleDeSessao"%>
 <%@page import="br.com.fatepg.quiz.Questoes"%>
 <%@page import="br.com.fatepg.quiz.Quiz"%>
+<%@page import="br.com.fatepg.quiz.TestesRealizados"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <%
-   
+    
 %>
 <html>
     <head>
@@ -20,8 +20,6 @@
     </head>
     <body>
         <h1>Web Quiz</h1>
-        
-        
         
         <%  
         if(session.getAttribute("userName") != null){  
@@ -40,22 +38,28 @@
                 <input type="submit" name=logout value="Sair"/>
                 <input type="button" onclick="document.location.href='quiz.jsp'" value="Realizar Quiz"/>  
             <%}%>
-            
+        </form> 
             <div>
-                <h2>Top 10</h2>
+                <h2>Ultimos 10</h2>
+                <% if (TestesRealizados.last10geral.size() > 0) { %>
                 <table>
                     <tr>
                         <th>Nome</th><th>Nota</th><th>Data</th>
-            <%
-                for
+                    </tr>
+                    <% for(int i=0;i<TestesRealizados.last10geral.size();i++){ %>
+                    <tr>
+                        <td><%= TestesRealizados.getLast10geral().get(i).getNome() %></td>
+                        <td><%= TestesRealizados.getLast10geral().get(i).getNota() %></td>
+                        <td><%= TestesRealizados.getLast10geral().get(i).g %></td
+                        
+                        <td><%= TestesRealizados.getLast10geral().get(i).getNome() %></td
+                                
+                        
+                    </tr>
                 
-              
-            %>
-                
-                
-                
-                
-            </div>
-        </form>  
+                </table>
+                <%}%>
+           </div>
+         
     </body>
 </html>
