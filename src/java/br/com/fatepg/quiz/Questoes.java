@@ -46,7 +46,6 @@ public class Questoes {
     
     public int[] randomizer() {
         int[] conf = new int[10];
-        boolean tfinal = false;
         int t = 0;
         int dif = 0;
 
