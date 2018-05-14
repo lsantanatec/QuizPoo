@@ -1,15 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.fatepg.quiz;
 
-/**
- *
- * @author a
- */
 public class Questoes {
+
     private String questao;
     private String resposta;
     private String[] alternativas;
@@ -19,7 +11,7 @@ public class Questoes {
         this.resposta = resposta;
         this.alternativas = alternativas;
     }
-    
+
     public String getQuestao() {
         return questao;
     }
@@ -43,6 +35,5 @@ public class Questoes {
     public void setAlternativas(String[] alternativas) {
         this.alternativas = alternativas;
     }
-    
 
 }
