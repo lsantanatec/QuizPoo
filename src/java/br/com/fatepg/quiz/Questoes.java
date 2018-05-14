@@ -1,15 +1,21 @@
 package br.com.fatepg.quiz;
 
+
+import java.util.ArrayList;
+
 public class Questoes {
 
     private String questao;
     private String resposta;
-    private String[] alternativas;
 
-    public Questoes(String questao, String resposta, String[] alternativas) {
+    private String[] alternativas;
+    public String   indicadorUso;
+
+    public Questoes(String questao, String resposta, String[] alternativas, String indicadorUso) {
         this.questao = questao;
         this.resposta = resposta;
         this.alternativas = alternativas;
+        this.indicadorUso = indicadorUso;
     }
 
     public String getQuestao() {
@@ -83,4 +89,22 @@ public class Questoes {
         
     }
 
+
+    /**
+     * @return the indicadorUso
+     */
+    public String getIndicadorUso() {
+        return indicadorUso;
+    }
+
+    /**
+     * @param indicadorUso the indicadorUso to set
+     */
+    public void setIndicadorUso(String indicadorUso) {
+        this.indicadorUso = indicadorUso;
+    }
+
 }
+
+}
+

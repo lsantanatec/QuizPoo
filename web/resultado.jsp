@@ -1,3 +1,4 @@
+<%@page import="br.com.fatepg.quiz.TestesRealizados"%>
 <%@page import="br.com.fatepg.quiz.ControleDeSessao"%>
 <%@page import="br.com.fatepg.quiz.Questoes"%>
 <%@page import="br.com.fatepg.quiz.Quiz"%>
@@ -7,16 +8,24 @@
 <%
     boolean tested=false;
     double grade=0;
+    
+    Quiz qu = new Quiz();
     if(request.getParameter("tested")!=null){
+        System.out.println("resultado");
         tested=true;
         int cont = 0;
-        for (int i=0;i<Quiz.getTeste().size(); i++){
-            Questoes q = Quiz.getTeste().get(i);
-            String p = request.getParameter(q.getQuestao());
-            if (q.getResposta().equals(p))
-                cont++;
+        for (int i=0;i<qu.teste.size(); i++){
+            Questoes q = qu.teste.get(i);
+            String p = request.getParameter(String.valueOf(i));
+            System.out.println(p);
+            System.out.println(q.getResposta());
+            if (q.getResposta().equals(p)){
+                cont=cont+1;
+            }
         }
-        grade = 100.0 * ((double)(cont)/Quiz.getTeste().size());
+        grade = 100.0 * ((double)(cont)/qu.teste.size());
+        Quiz quiz = new Quiz(session.getAttribute("userName").toString(), grade);
+        TestesRealizados.last10Geral.add(quiz);
     }
     //session.getAttribute("uname");
 %>
