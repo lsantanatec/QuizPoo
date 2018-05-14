@@ -11,7 +11,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -43,42 +42,33 @@
 
                 <% 
                     TestesRealizados teste = new TestesRealizados();
-                    if (teste.getLast10Geral().size() > 0) { %>
-                <h2>Ultimos <%= teste.getLast10Geral().size() %></h2>
-
-                <h2>Ultimos 10</h2>
-                
-                <% if (testes.size() > 0) { %>
-
-                <table>
-                    <tr>
-                        <th>Nome</th><th>Nota</th><th>Data</th>
-                    </tr>
+                   if (teste.getLast10Geral().size() > 0) { %>
+             <h2>Ultimos <%= teste.getLast10Geral().size() %></h2>
+                 <table>
+                     <tr>
+                         <th>Nome</th><th>Nota</th><th>Data</th>
+                     </tr>
 
                     <% 
                         int sizeList = (teste.getLast10Geral().size())-1;
                         int fimRank = sizeList - 10;
                         for(int i=sizeList;i>fimRank;i--){ %>
-                    <tr>
+                     <tr>
+
+
+                        
                         <% if(i>=0){ %>
                         <td><%= teste.getLast10Geral().get(i).getUser() %></td>
                         <td><%= teste.getLast10Geral().get(i).getPontuacao() %></td>
                         <td>teste</td>
                         <%}else{}%>
-
-                    <% for (int i = 0; i < testes.size(); i++) {%>
-                    <tr>
-                        <td><%= testes.get(i).getNomeUser()%></td>
-                        <td><%= testes.get(i).getNota()%></td>
-                        <td><%= testes.get(i).getDataTeste()%></td>
-
-                    </tr>
+                     </tr>
+                
                     <%}%>
-                </table>
+                 </table>
                 <%}else{%>
                 nada
-                <%}%>
+                 <%}%>
             </div>
-         
     </body>
-</html>
+    </html>
