@@ -2,7 +2,7 @@ package br.com.fatepg.quiz;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  *
@@ -14,24 +14,14 @@ public class TestesRealizados {
     private Double nota;
     private LocalDate dataTeste;
     
-    private List<Double> last10Geral = new ArrayList<>();
-    private List<Double> melhoresNotas = new ArrayList<>();
+    public static ArrayList<Usuario> last10geral = new ArrayList();
+    public static ArrayList<Usuario> melhoresnotas = new ArrayList();
     
-    public TestesRealizados(String nomeUser, Double nota, LocalDate dataTeste) {
+    /*public TestesRealizados(String nomeUser, Double nota, LocalDate dataTeste) {
         this.nomeUser = nomeUser;
         this.nota = nota;
         this.dataTeste = dataTeste;
-    }
-
-    public LocalDate getDataTeste() {
-        return dataTeste;
-    }
-
-    public void setDataTeste(LocalDate dataTeste) {
-        this.dataTeste = dataTeste;
-    }
-
-   
+    }*/
 
     public String getNomeUser() {
         return nomeUser;
@@ -49,24 +39,11 @@ public class TestesRealizados {
         this.nota = nota;
     }
 
-    public List<Double> getLast10Geral() {
-        return last10Geral;
+    public LocalDate getDataTeste() {
+        return dataTeste;
     }
 
-    public void setLast10Geral(List<Double> last10Geral) {
-        this.last10Geral = last10Geral;
+    public void setDataTeste(LocalDate dataTeste) {
+        this.dataTeste = dataTeste;
     }
-
-    public List<Double> getMelhoresNotas() {
-        return melhoresNotas;
-    }
-
-    public void setMelhoresNotas(List<Double> melhoresNotas) {
-        this.melhoresNotas = melhoresNotas;
-    }
-    
-    
-    
-    
-    
 }

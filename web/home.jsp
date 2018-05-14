@@ -3,6 +3,7 @@
     Created on : 07/05/2018, 21:38:40
     Author     : a
 --%>
+<%@page import="java.util.ArrayList;"%>
 <%@page import="br.com.fatepg.quiz.ControleDeSessao"%>
 <%@page import="br.com.fatepg.quiz.Questoes"%>
 <%@page import="br.com.fatepg.quiz.Quiz"%>
@@ -11,7 +12,7 @@
 
 <!DOCTYPE html>
 <%
-    
+    ArrayList<TestesRealizados> testes = new ArrayList<>();
     
     
     
@@ -52,12 +53,11 @@
                     </tr>
                     <% for(int i=0;i<TestesRealizados.last10geral.size();i++){ %>
                     <tr>
-                        <td><%= TestesRealizados.getNomeUser().g %></td>
-                        <td><%=  %></td>
-                        <td><%=  %></td
-                        
+                        <td><%= testes.get(i).getNomeUser() %></td>
+                        <td><%= testes.get(i).getNota() %></td>
+                        <td><%= testes.get(i).getDataTeste() %></td>
                     </tr>
-                
+                    <%}%>
                 </table>
                 <%}%>
            </div>

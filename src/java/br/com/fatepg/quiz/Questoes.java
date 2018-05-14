@@ -51,9 +51,9 @@ public class Questoes {
 
         for (int a = 0; a < conf.length; a++) {
             conf[a] = (int) (Math.random() * 100);
-            if (conf[a] > 30) {
+            if (conf[a] > 29) {
                 t = conf[a];
-                dif = t - 30;
+                dif = t - 29;
                 dif += a;
                 conf[a] -= dif;
             }
@@ -61,9 +61,9 @@ public class Questoes {
                 if (a == b) {
                     continue;
                 }
-                if (conf[a] > 30) {
+                if (conf[a] > 29) {
                     t = conf[a];
-                    dif = t - 30;
+                    dif = t - 29;
                     dif += a;
                     conf[a] -= dif;
                 }

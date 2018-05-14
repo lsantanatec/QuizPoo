@@ -1,7 +1,7 @@
 
 package br.com.fatepg.quiz;
 
-import java.io.PrintWriter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class Usuario{
     
     private String nome;
     private double media;
-    private List<Double> last10 = new ArrayList<>();  
+    public static List<Double> last10 = new ArrayList<>();  
     
     
     public Usuario(String nome, Double media, List<Double> last10) {
