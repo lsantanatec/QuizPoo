@@ -12,10 +12,9 @@
     <body>
         <h1>Web Quiz</h1>
         <form action = "resultado.jsp">
-
         <%            
             Quiz q = new Quiz();
-            ArrayList<Questoes> test = new ArrayList<Questoes>();
+            ArrayList<Questoes> test = new ArrayList<>();
             q.inicializarQuestoes();
             test = q.getTeste();
             
@@ -25,27 +24,18 @@
                   //  Quiz quiz = new Quiz(session.getAttribute("userName").toString());
                     //Questoes q = Quiz.getTeste().get(i); 
         %>
-                
-            <h2><%=test.get(i).getQuestao() %></h2>
+             
+            <img src ="<%=test.get(i).getQuestao()%>" alt="image" />
+                <br>
             <input type="radio" name="<%=i %>" value="<%=test.get(i).getAlternativas()[0]%>"/><%=test.get(i).getAlternativas()[0]%>
             <input type="radio" name="<%=i %>" value="<%=test.get(i).getAlternativas()[1]%>"/><%=test.get(i).getAlternativas()[1]%>
             <input type="radio" name="<%=i %>" value="<%=test.get(i).getAlternativas()[2]%>"/><%=test.get(i).getAlternativas()[2]%>
+            <br>
+            <br>
             <%}%>
+            
                 <hr/>
                 <input type="submit" name="tested" value="Enviar" />
-
-            <%  for (int i = 0; i < Quiz.getTeste().size(); i++) {
-                    Questoes q = Quiz.getTeste().get(i);%>
-            <br>
-            <img src ="<%=q.getQuestao()%>" alt="image" />
-            <br>
-            <input type="radio" name="<%=q.getQuestao()%>" value="<%=q.getAlternativas()[0]%>"/><%=q.getAlternativas()[0]%>
-            <input type="radio" name="<%=q.getQuestao()%>" value="<%=q.getAlternativas()[1]%>"/><%=q.getAlternativas()[1]%>
-            <input type="radio" name="<%=q.getQuestao()%>" value="<%=q.getAlternativas()[2]%>"/><%=q.getAlternativas()[2]%>
-            <%}%>
-            <hr/>
-            <input type="submit" name="tested" value="Enviar" />
-
         </form>
     </body>
 </html>
