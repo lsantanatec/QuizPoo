@@ -12,6 +12,10 @@
 <!DOCTYPE html>
 <%
     
+    
+    
+    
+    
 %>
 <html>
     <head>
@@ -48,12 +52,9 @@
                     </tr>
                     <% for(int i=0;i<TestesRealizados.last10geral.size();i++){ %>
                     <tr>
-                        <td><%= TestesRealizados.getLast10geral().get(i).getNome() %></td>
-                        <td><%= TestesRealizados.getLast10geral().get(i).getNota() %></td>
-                        <td><%= TestesRealizados.getLast10geral().get(i).g %></td
-                        
-                        <td><%= TestesRealizados.getLast10geral().get(i).getNome() %></td
-                                
+                        <td><%= TestesRealizados.getNomeUser().g %></td>
+                        <td><%=  %></td>
+                        <td><%=  %></td
                         
                     </tr>
                 
