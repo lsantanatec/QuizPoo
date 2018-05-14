@@ -1,6 +1,6 @@
 package br.com.fatepg.quiz;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,19 +10,18 @@ import java.util.List;
  */
 public class TestesRealizados {
     
+    public static List<Quiz> last10Geral = new ArrayList<>();
+    private static List<Quiz> melhoresNotas = new ArrayList<>();
     private String nomeUser;
     private Double nota;
-    private LocalDate dataTeste;
+   // private LocalDate dataTeste;
     
-    private List<Double> last10Geral = new ArrayList<>();
-    private List<Double> melhoresNotas = new ArrayList<>();
-    
-    public TestesRealizados(String nomeUser, Double nota, LocalDate dataTeste) {
+    /*public TestesRealizados(String nomeUser, Double nota, LocalDate dataTeste) {
         this.nomeUser = nomeUser;
         this.nota = nota;
-        this.dataTeste = dataTeste;
-    }
-
+        //this.dataTeste = dataTeste;
+    }*/
+/*
     public LocalDate getDataTeste() {
         return dataTeste;
     }
@@ -30,7 +29,7 @@ public class TestesRealizados {
     public void setDataTeste(LocalDate dataTeste) {
         this.dataTeste = dataTeste;
     }
-
+*/
    
 
     public String getNomeUser() {
@@ -49,19 +48,19 @@ public class TestesRealizados {
         this.nota = nota;
     }
 
-    public List<Double> getLast10Geral() {
+    public List<Quiz> getLast10Geral() {
         return last10Geral;
     }
 
-    public void setLast10Geral(List<Double> last10Geral) {
+    public void setLast10Geral(List<Quiz> last10Geral) {
         this.last10Geral = last10Geral;
     }
 
-    public List<Double> getMelhoresNotas() {
+    public List<Quiz> getMelhoresNotas() {
         return melhoresNotas;
     }
 
-    public void setMelhoresNotas(List<Double> melhoresNotas) {
+    public void setMelhoresNotas(List<Quiz> melhoresNotas) {
         this.melhoresNotas = melhoresNotas;
     }
     
