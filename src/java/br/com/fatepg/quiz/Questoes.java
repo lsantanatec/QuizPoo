@@ -1,19 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.fatepg.quiz;
+
 
 import java.util.ArrayList;
 
-/**
- *
- * @author a
- */
 public class Questoes {
-    private String   questao;
-    private String   resposta;
+
+    private String questao;
+    private String resposta;
+
     private String[] alternativas;
     public String   indicadorUso;
 
@@ -23,7 +17,7 @@ public class Questoes {
         this.alternativas = alternativas;
         this.indicadorUso = indicadorUso;
     }
-    
+
     public String getQuestao() {
         return questao;
     }
@@ -55,9 +49,9 @@ public class Questoes {
 
         for (int a = 0; a < conf.length; a++) {
             conf[a] = (int) (Math.random() * 100);
-            if (conf[a] > 30) {
+            if (conf[a] > 29) {
                 t = conf[a];
-                dif = t - 30;
+                dif = t - 29;
                 dif += a;
                 conf[a] -= dif;
             }
@@ -65,9 +59,9 @@ public class Questoes {
                 if (a == b) {
                     continue;
                 }
-                if (conf[a] > 30) {
+                if (conf[a] > 29) {
                     t = conf[a];
-                    dif = t - 30;
+                    dif = t - 29;
                     dif += a;
                     conf[a] -= dif;
                 }
@@ -95,6 +89,7 @@ public class Questoes {
         
     }
 
+
     /**
      * @return the indicadorUso
      */
@@ -110,3 +105,6 @@ public class Questoes {
     }
 
 }
+
+}
+

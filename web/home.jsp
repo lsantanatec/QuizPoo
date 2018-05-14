@@ -3,6 +3,7 @@
     Created on : 07/05/2018, 21:38:40
     Author     : a
 --%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="br.com.fatepg.quiz.ControleDeSessao"%>
 <%@page import="br.com.fatepg.quiz.Questoes"%>
 <%@page import="br.com.fatepg.quiz.Quiz"%>
@@ -10,6 +11,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,6 +21,7 @@
         <h1>Web Quiz</h1>
         
         <%  
+      
         if(session.getAttribute("userName") != null){  
         String name=(String)session.getAttribute("userName"); 
         %>
@@ -35,16 +38,23 @@
                 <input type="submit" name=logout value="Sair"/>
                 <input type="button" onclick="document.location.href='quiz.jsp'" value="Realizar Quiz"/>  
             <%}%>
-        </form> 
+        </form>  
             <div>
+
                 <% 
                     TestesRealizados teste = new TestesRealizados();
                     if (teste.getLast10Geral().size() > 0) { %>
                 <h2>Ultimos <%= teste.getLast10Geral().size() %></h2>
+
+                <h2>Ultimos 10</h2>
+                
+                <% if (testes.size() > 0) { %>
+
                 <table>
                     <tr>
                         <th>Nome</th><th>Nota</th><th>Data</th>
                     </tr>
+
                     <% 
                         int sizeList = (teste.getLast10Geral().size())-1;
                         int fimRank = sizeList - 10;
@@ -55,13 +65,20 @@
                         <td><%= teste.getLast10Geral().get(i).getPontuacao() %></td>
                         <td>teste</td>
                         <%}else{}%>
+
+                    <% for (int i = 0; i < testes.size(); i++) {%>
+                    <tr>
+                        <td><%= testes.get(i).getNomeUser()%></td>
+                        <td><%= testes.get(i).getNota()%></td>
+                        <td><%= testes.get(i).getDataTeste()%></td>
+
                     </tr>
                     <%}%>
                 </table>
                 <%}else{%>
                 nada
                 <%}%>
-           </div>
+            </div>
          
     </body>
 </html>
