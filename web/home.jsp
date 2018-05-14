@@ -46,12 +46,12 @@
         </form> 
             <div>
                 <h2>Ultimos 10</h2>
-                <% if (TestesRealizados.last10geral.size() > 0) { %>
+                <% if (testes.size() > 0) { %>
                 <table>
                     <tr>
                         <th>Nome</th><th>Nota</th><th>Data</th>
                     </tr>
-                    <% for(int i=0;i<TestesRealizados.last10geral.size();i++){ %>
+                    <% for(int i=0;i<testes.size();i++){ %>
                     <tr>
                         <td><%= testes.get(i).getNomeUser() %></td>
                         <td><%= testes.get(i).getNota() %></td>
